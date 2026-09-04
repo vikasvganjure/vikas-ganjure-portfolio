@@ -1,179 +1,129 @@
-$(document).ready(function(){
+/* Main portfolio interactions. */
+document.addEventListener('DOMContentLoaded', function () {
+  const menu = document.querySelector('#menu');
+  const navbar = document.querySelector('.navbar');
 
-    $('#menu').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
+  // Mobile menu
+  if (menu && navbar) {
+    menu.addEventListener('click', function () {
+      menu.classList.toggle('fa-times');
+      navbar.classList.toggle('nav-toggle');
+    });
+  }
+
+  // Close menu and update active navigation item on scroll.
+  function handleScroll() {
+    if (menu) menu.classList.remove('fa-times');
+    if (navbar) navbar.classList.remove('nav-toggle');
+
+    const scrollTop = document.querySelector('#scroll-top');
+    if (scrollTop) scrollTop.classList.toggle('active', window.scrollY > 300);
+
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.navbar a');
+    let current = 'home';
+
+    sections.forEach(function (section) {
+      if (window.scrollY >= section.offsetTop - 160) current = section.id;
     });
 
-    $(window).on('scroll load',function(){
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+    links.forEach(function (link) {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  }
 
-        if(window.scrollY>60){
-            document.querySelector('#scroll-top').classList.add('active');
-        }else{
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 
-        // scroll spy
-        $('section').each(function(){
-            let height = $(this).height();
-            let offset = $(this).offset().top - 200;
-            let top = $(window).scrollTop();
-            let id = $(this).attr('id');
+  // Typing effect
+  if (typeof Typed !== 'undefined' && document.querySelector('.typing-text')) {
+    new Typed('.typing-text', {
+      strings: ['Java Developer', 'Backend Developer', 'Software Developer', 'Web Developer'],
+      typeSpeed: 70,
+      backSpeed: 40,
+      backDelay: 1200,
+      loop: true
+    });
+  }
 
-            if(top>offset && top<offset+height){
-                $('.navbar ul li a').removeClass('active');
-                $('.navbar').find(`[href="#${id}"]`).addClass('active');
-            }
+  // Scroll reveal
+  if (typeof ScrollReveal !== 'undefined') {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '50px',
+      duration: 900,
+      delay: 100,
+      reset: false
+    });
+
+    sr.reveal('.home .content', { origin: 'left' });
+    sr.reveal('.home .image', { origin: 'right' });
+    sr.reveal('.about .image', { origin: 'left' });
+    sr.reveal('.about .content', { origin: 'right' });
+    sr.reveal('.skill-card', { interval: 100 });
+    sr.reveal('.education .box', { interval: 150 });
+    sr.reveal('.projects .box', { interval: 150 });
+    sr.reveal('.experience .container', { interval: 150 });
+    sr.reveal('.certification-card', { interval: 100 });
+    sr.reveal('.contact .content', { origin: 'left' });
+    sr.reveal('.contact form', { origin: 'right' });
+  }
+
+  // Tilt cards
+  if (typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll('.skill-card, .certification-card'), {
+      max: 10,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.2
+    });
+  }
+
+  // Contact form - uses the EmailJS IDs already present in your previous script.
+  const contactForm = document.querySelector('#contact-form');
+  const formStatus = document.querySelector('#form-status');
+
+  if (contactForm && typeof emailjs !== 'undefined') {
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const button = contactForm.querySelector('button');
+      const buttonText = button ? button.querySelector('span') : null;
+
+      if (button) button.disabled = true;
+      if (buttonText) buttonText.textContent = 'Sending...';
+      if (formStatus) formStatus.textContent = '';
+
+      emailjs.sendForm('service_sxhkdba', 'template_9fbmhxi', contactForm)
+        .then(function () {
+          contactForm.reset();
+          if (formStatus) formStatus.textContent = 'Message sent successfully!';
+        })
+        .catch(function (error) {
+          console.error('EmailJS Error:', error);
+          if (formStatus) formStatus.textContent = 'Unable to send message. Please try again.';
+        })
+        .finally(function () {
+          if (button) button.disabled = false;
+          if (buttonText) buttonText.textContent = 'Send Message';
         });
     });
+  }
 
-    // smooth scrolling
-    $('a[href*="#"]').on('click',function(e){
-        e.preventDefault();
-        $('html, body').animate({
-            scrollTop : $($(this).attr('href')).offset().top,
-        },500, 'linear')
-    })
-});
-
-document.addEventListener('visibilitychange',
-function(){
-    if(document.visibilityState === "visible"){
-        document.title = "Portfolio | Karan Nannaware";
-        $("#favicon").attr("href","assests/images/favicon.png");
-    }
-    else {
-        document.title = "Come Back To Portfolio";
-        
-    }
-});
-
-
-// <!-- typed js effect starts -->
-    var typed = new Typed(".typing-text", {
-        strings: ["Full-Stack development", "Machine Learning", "Data Scientist", "Software Engineer"],
-        loop: true,
-        typeSpeed: 50,
-		backSpeed: 25,
-		backDelay: 500,
-      });
-// <!-- typed js effect ends -->
-
-// <!-- tilt js effect starts -->
-      VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-      });
-// <!-- tilt js effect ends -->
-
-
-
-// Start of Tawk.to Live Chat
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/60f70460649e0a0a5ccd22a7/1fb2ei71o';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-// End of Tawk.to Live Chat
-
- // <!-- emailjs to mail contact form data -->
- $("#contact-form").submit(function (event) {
-    //event.preventdefault();
-    
-    event.preventDefault();
-    emailjs.init("tKcnAF73jMw0tRWFB");
-    console.log("form submitted");
-    emailjs.sendForm('service_sxhkdba', 'template_9fbmhxi', '#contact-form')
-        .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            document.getElementById("contact-form").reset();
-            alert("Form Submitted Successfully");
-        }, function (error) {
-            console.log('FAILED...', error);
-            alert("Form Submission Failed! Try Again");
-        });
-    
-});
-
-
-
-
-/* ===== SCROLL REVEAL ANIMATION ===== */
-const srtop = ScrollReveal({
-    origin: 'top',
-    distance: '80px',
-    duration: 1000,
-    reset: true
-});
-
-
-
-async function fetchData(type = "skills") {
-    let response
-    type === "skills" ?
-        response = await fetch("skills.json")
-        :
-        response = await fetch("./projects/projects.json")
-    const data = await response.json();
-    return data;
-}
-
-function showSkills(skills) {
-    let skillsContainer = document.getElementById("skillsContainer");
-    let skillHTML = "";
-    skills.forEach(skill => {
-        skillHTML += `
-        <div class="bar">
-              <div class="info">
-                <img src=${skill.icon} alt="skill" />
-                <span>${skill.name}</span>
-              </div>
-            </div>`
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (event) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
     });
-    skillsContainer.innerHTML = skillHTML;
-}
+  });
 
-fetchData().then(data => {
-    showSkills(data);
+  // Browser tab title
+  document.addEventListener('visibilitychange', function () {
+    document.title = document.visibilityState === 'visible'
+      ? 'Vikas Ganjure | Java & Web Developer'
+      : 'Come Back To Portfolio';
+  });
 });
-
-/* SCROLL HOME */
-srtop.reveal('.home .content h3',{delay: 200}); 
-srtop.reveal('.home .content p',{delay: 200}); 
-srtop.reveal('.home .content .btn',{delay: 200}); 
-
-srtop.reveal('.home .image',{delay: 400}); 
-srtop.reveal('.home .linkedin',{interval: 600}); 
-srtop.reveal('.home .github',{interval: 800}); 
-srtop.reveal('.home .twitter',{interval: 1000});
-srtop.reveal('.home .telegram',{interval: 600}); 
-srtop.reveal('.home .instagram',{interval: 600}); 
-
-
-
-/* SCROLL ABOUT */
-srtop.reveal('.about .content h3',{delay: 300});
-srtop.reveal('.about .content .tag',{delay: 400}); 
-srtop.reveal('.about .content p',{delay: 300}); 
-srtop.reveal('.about .content .box-container',{delay: 300}); 
-srtop.reveal('.about .content .resumebtn',{delay: 300}); 
-
-
-/* SCROLL EDUCATION */
-srtop.reveal('.education .box',{interval: 200}); 
-
-/* SCROLL PROJECTS */
-srtop.reveal('.work .box',{interval: 200}); 
-
-/* SCROLL EXPERIENCE */
-srtop.reveal('.experience .timeline',{delay: 400});
-srtop.reveal('.experience .timeline .container',{interval: 400}); 
-
-/* SCROLL CONTACT */
-srtop.reveal('.contact .container',{delay: 400});
-srtop.reveal('.contact .container .form-group',{delay: 400});
