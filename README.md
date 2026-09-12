@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="https://visionary-gumption-f306f2.netlify.app/"><strong>Explore Live Portfolio</strong></a> • 
+  🌐 <a href="https://vikasganjure.vercel.app/"><strong>Explore Live Portfolio</strong></a> • 
   📄 <a href="https://drive.google.com/file/d/14ig6UU1uZkTiwnJfaNCvH6f5Zat0Rkzm/view?usp=drivesdk"><strong>View Resume</strong></a> • 
   💼 <a href="https://www.linkedin.com/in/vikas-ganjure"><strong>LinkedIn Profile</strong></a>
 </p>
