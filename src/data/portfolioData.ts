@@ -302,6 +302,7 @@ export const certifications: Certification[] = [
     iconName: 'Layers',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/1JNXwHzb7TH-jgW5knJHEnPd3C0-BivjC/view?usp=drive_link',
   },
   {
     id: 'cert-letsgrowmore-java',
