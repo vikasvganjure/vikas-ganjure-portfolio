@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="https://vikas-ganjure-portfolio.netlify.app/">View Live Portfolio</a>
+  🌐 <a href="vikasganjure.vercel.app">View Live Portfolio</a>
 </p>
 
 ---
