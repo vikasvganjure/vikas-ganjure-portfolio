@@ -344,6 +344,7 @@ export const certifications: Certification[] = [
     iconName: 'Cloud',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1ZaG54m-EJOX3GkYN5sDwG7OOkLFw0hft/view?usp=drive_link',
   },
   {
     id: 'cert-simplilearn-cpp',
@@ -353,6 +354,7 @@ export const certifications: Certification[] = [
     iconName: 'Terminal',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1nuoQh4skqYdkMc-o1utOF4bYFey36R3o/view?usp=drive_link',
   },
   {
     id: 'cert-intro-genai',
@@ -362,6 +364,7 @@ export const certifications: Certification[] = [
     iconName: 'Sparkles',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/199q6ch8MuyMYr0_7MY2P954G3kfPxCnd/view?usp=drive_link',
   },
   {
     id: 'cert-occupyed-sql',
@@ -371,6 +374,7 @@ export const certifications: Certification[] = [
     iconName: 'Database',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1uhD-D3gb2TnVAzZiH1BGM8TvsKDT6Rvt/view?usp=drive_link',
   },
   {
     id: 'cert-mountreach-android',
@@ -380,6 +384,7 @@ export const certifications: Certification[] = [
     iconName: 'Cpu',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1wgaxXLXaLf5SYBF_MQUtytXR4JlnA8NB/view?usp=drive_link',
   },
   {
     id: 'cert-nxtwave-genai',
@@ -389,6 +394,7 @@ export const certifications: Certification[] = [
     iconName: 'Sparkles',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1Pu_Rm_ZoEKazeUuLhzHe5lypIVtZX_Nn/view?usp=drive_link',
   },
   {
     id: 'cert-tcs-ion-career',
