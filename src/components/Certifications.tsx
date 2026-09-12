@@ -1,6 +1,6 @@
 import React from 'react';
 import { certifications } from '../data/portfolioData';
-import { Award, ShieldCheck, Code, Briefcase, Database, BarChart3, Cloud, Terminal } from 'lucide-react';
+import { Award, ShieldCheck, Code, Briefcase, Database, BarChart3, Cloud, Terminal, ExternalLink } from 'lucide-react';
 
 export const Certifications: React.FC = () => {
   const getCertIcon = (iconName: string) => {
@@ -67,7 +67,19 @@ export const Certifications: React.FC = () => {
 
               <div className="mt-5 pt-3 border-t border-slate-200 dark:border-zinc-900 flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-zinc-500">
                 <span className="text-slate-600 dark:text-zinc-400">{cert.tag}</span>
-                <span className="text-indigo-600 dark:text-indigo-400 group-hover:underline">Credential</span>
+                {cert.credentialUrl ? (
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 font-semibold group-hover:underline transition-colors"
+                  >
+                    <span>View Credential</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                ) : (
+                  <span className="text-slate-400 dark:text-zinc-600">Credential</span>
+                )}
               </div>
             </div>
           ))}

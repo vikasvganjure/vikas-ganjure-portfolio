@@ -52,4 +52,5 @@ export interface Certification {
   tag: string;
   iconName: string;
   verified?: boolean;
+  credentialUrl?: string;
 }
