@@ -312,6 +312,7 @@ export const certifications: Certification[] = [
     iconName: 'Briefcase',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/1IMNn1scUS1etlI9aJcXWjBcRSRVi5FI8/view?usp=drive_link',
   },
   {
     id: 'cert-octanet-web',
