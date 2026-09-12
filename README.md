@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  🌐 <a href="vikasganjure.vercel.app">View Live Portfolio</a>
+  🌐 <a href="https://vikasganjure.vercel.app/">View Live Portfolio</a>
 </p>
 
 ---
