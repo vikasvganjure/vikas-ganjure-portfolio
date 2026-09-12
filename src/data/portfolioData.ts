@@ -332,6 +332,7 @@ export const certifications: Certification[] = [
     iconName: 'BarChart3',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/1WYlHJXLYH63HFr_jztlB-i1y6M4QCO1T/view?usp=drive_link',
   },
 
   // ================= 2. OTHER CERTIFICATIONS & LEARNING =================
