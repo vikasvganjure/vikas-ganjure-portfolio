@@ -53,4 +53,5 @@ export interface Certification {
   iconName: string;
   verified?: boolean;
   credentialUrl?: string;
+  group?: 'featured' | 'other';
 }
