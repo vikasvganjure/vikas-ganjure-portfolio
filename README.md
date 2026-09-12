@@ -22,7 +22,7 @@
 
 <p align="center">
   🌐 <a href="https://vikasganjure.vercel.app/"><strong>Explore Live Portfolio</strong></a> • 
-  📄 <a href="https://drive.google.com/file/d/14ig6UU1uZkTiwnJfaNCvH6f5Zat0Rkzm/view?usp=drivesdk"><strong>View Resume</strong></a> • 
+  📄 <a href="https://docs.google.com/document/d/1Fr_gskWlNbUpA7nM5TNk2KXKx257MPDU/edit?usp=drive_link&ouid=107272028772717210170&rtpof=true&sd=true"><strong>View Resume</strong></a> • 
   💼 <a href="https://www.linkedin.com/in/vikas-ganjure"><strong>LinkedIn Profile</strong></a>
 </p>
 
