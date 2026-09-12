@@ -404,6 +404,7 @@ export const certifications: Certification[] = [
     iconName: 'Briefcase',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1Rx7egHWtQIu6YxLHOtMV_HOBJTwkskgj/view?usp=drive_link',
   },
   {
     id: 'cert-tcs-ion-softskills',
@@ -413,6 +414,7 @@ export const certifications: Certification[] = [
     iconName: 'Users',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1Zc2hzPzhf_ipzUCAmxe1fpZGbicPrdrg/view?usp=drive_link',
   },
   {
     id: 'cert-scaler-devops',
@@ -422,6 +424,7 @@ export const certifications: Certification[] = [
     iconName: 'Server',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1Mq2cf_SZfazXEFn3h2_4RA2-l2o-93lg/view?usp=drive_link',
   },
   {
     id: 'cert-placement-prep',
@@ -431,6 +434,7 @@ export const certifications: Certification[] = [
     iconName: 'GraduationCap',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1iEVfs2bfR0yDRE1QEgB27NPelqAQq9LA/view?usp=drive_link',
   },
   {
     id: 'cert-c-quiz',
@@ -440,5 +444,6 @@ export const certifications: Certification[] = [
     iconName: 'Award',
     verified: true,
     group: 'other',
+    credentialUrl: 'https://drive.google.com/file/d/1GZuebC0tkJem9Dr0kq_CSjlM0qkXaLhU/view?usp=drive_link',
   }
 ];
