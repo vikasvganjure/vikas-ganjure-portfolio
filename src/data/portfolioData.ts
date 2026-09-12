@@ -322,6 +322,7 @@ export const certifications: Certification[] = [
     iconName: 'Globe',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/1I9FKye6v45dK0MwYfyYsQR4jAo3CdDgc/view?usp=drive_link',
   },
   {
     id: 'cert-accenture-data',
