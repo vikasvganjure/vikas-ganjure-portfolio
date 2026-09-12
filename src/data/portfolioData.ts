@@ -171,7 +171,7 @@ export const experience: ExperienceItem[] = [
     role: 'Junior Software Engineer',
     company: 'Growstats Media Pvt. Ltd.',
     location: 'Pune, Maharashtra',
-    period: 'Apr 2026 – Present',
+    period: 'Apr 2026 – Aug 2026',
     current: true,
     type: 'Full-time',
     skills: ['Web Applications', 'Linux Server Deployment', 'HTML5/CSS3', 'JavaScript', 'Server Config'],
