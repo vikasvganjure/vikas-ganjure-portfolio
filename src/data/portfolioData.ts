@@ -292,6 +292,7 @@ export const certifications: Certification[] = [
     iconName: 'Database',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/1vO1UgKnJotzgmwtfYFGQtu6jtfS7gMGD/view?usp=drive_link',
   },
   {
     id: 'cert-qspiders-java',
