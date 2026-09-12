@@ -110,7 +110,7 @@
 
 ## 📜 Licenses & Certifications
 
-- **Java (Basic & Advanced Assessment)** — *HackerRank*
+- **Java (Basic Assessment)** — *HackerRank*
 - **Career Edge: Young Professional** — *TCS iON*
 - **Database Management Systems** — *SWAYAM / IIT (NPTEL)*
 - **Data Analytics & Visualization** — *Accenture*

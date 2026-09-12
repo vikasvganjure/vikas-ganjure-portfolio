@@ -276,12 +276,13 @@ export const certifications: Certification[] = [
   // ================= 1. FEATURED CERTIFICATIONS (6) =================
   {
     id: 'cert-hackerrank-java',
-    title: 'Java (Basic & Advanced Assessment)',
+    title: 'Java (Basic Assessment)',
     issuer: 'HackerRank',
     tag: 'Algorithms & Java',
     iconName: 'Code',
     verified: true,
     group: 'featured',
+    credentialUrl: 'https://drive.google.com/file/d/19g2Glje1EJje43nO61f-ZSWsxA7Coesw/view?usp=drive_link',
   },
   {
     id: 'cert-swayam-dbms',
